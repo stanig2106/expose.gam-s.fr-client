@@ -39,7 +39,7 @@
     "prerollup": "cat package.json | jq 'del(.type)' > /tmp/package.json && mv /tmp/package.json package.json",
     "postrollup": "git checkout package.json",
     "rollup": "npm run prerollup && rollup -c --bundleConfigAsCjs && npm run postrollup #Prerollup is a workaround to prevent node complaining about the package type in the cjs bundle",
-    "build-linux-x64-bin": "pkg tunnelmole.bundle.js --targets node18-linux-x64 --output bin/expose-linux",
+    "build-linux-x64-bin": "pkg tunnelmole.bundle.js --targets node18-linux-x64 --output bin/expose-linux-x64",
     "build-linux-arm64-bin": "pkg tunnelmole.bundle.js --targets node18-linux-arm64 --output bin/expose-linux-arm64",
     "build-mac-x64-bin": "pkg tunnelmole.bundle.js --targets node18-mac-x64 --output bin/expose-mac-x64",
     "build-mac-arm64-bin": "pkg tunnelmole.bundle.js --targets node18-mac-arm64 --output bin/expose-mac-arm64",
