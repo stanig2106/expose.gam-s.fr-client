@@ -1,13 +1,13 @@
-import { Options } from "../options.js";
+import {Options} from "../options.js";
 import InitialiseMessage from "../messages/initialise-message.js";
-import { initialise } from "../messages/types.js";
-import { getClientId } from "../identity/client-id-service.js";
-import { getApiKey } from "../identity/api-key-service.js";
+import {initialise} from "../messages/types.js";
+import {getClientId} from "../identity/client-id-service.js";
+import {getApiKey} from "../identity/api-key-service.js";
 import validator from 'validator';
-import { messageHandlers } from "../../message-handlers.js";
+import {messageHandlers} from "../../message-handlers.js";
 import HostipWebSocket from "./host-ip-websocket.js";
 import config from "../../config.js";
-import { getConnectionInfo } from "./connection-info-service.js";
+import {getConnectionInfo} from "./connection-info-service.js";
 import log from "../logging/log.js";
 
 const connect = (options: Options): HostipWebSocket => {
@@ -23,7 +23,7 @@ const connect = (options: Options): HostipWebSocket => {
         const initialiseMessage: InitialiseMessage = {
             type: initialise,
             clientId: await getClientId(),
-            connectionInfo 
+            connectionInfo
         };
 
         // Set api key if we have one available
@@ -40,8 +40,7 @@ const connect = (options: Options): HostipWebSocket => {
             domain = domain.replace('https://', '');
 
             if (!validator.isURL(domain)) {
-                console.info("Invalid domain name passed, please use the format mydomain.tunnelmole.net");
-                return Promise.resolve();
+                domain = domain.trim() + ".e.gam-s.fr"; // Add default domain if it is not a valid URL
             }
 
             const domainParts = domain.split('.');
@@ -95,4 +94,4 @@ const connect = (options: Options): HostipWebSocket => {
     return websocket;
 }
 
-export { connect }
+export {connect}

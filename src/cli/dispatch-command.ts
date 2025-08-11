@@ -15,12 +15,12 @@ export default async function dispatchCommand(arg0 : any, command : Command) {
     if (isNumber(arg0)) {
         options.port = parseInt(arg0);
     }
-    
+
     if (typeof command.args[1] === 'string' && command.args[1].toLowerCase() === 'as' && typeof command.args[2] === 'string') {
         options.domain = command.args[2];
     } else if (typeof command.args[1] === 'string' && command.args[1] === "AS" && typeof command.args[2] !== 'string') {
-        console.info("Please enter the domain you want to expose e.g. foo.tunnelmole.net");
-    } 
+        console.info("Please enter the domain you want to expose e.g. foo.e.gam-s.fr");
+    }
 
     // Check for a route handler for any options passed
     const routeOption = resolveRoute(command);

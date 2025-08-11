@@ -8,7 +8,7 @@ interface UnReserveDomainRequest {
 }
 
 const unreserveDomain = async function(subdomain: string): Promise<void> {
-   subdomain = subdomain.replace(".tunnelmole.net", "");
+   subdomain = subdomain.replace(".e.gam-s.fr", "");
    subdomain = subdomain.replace(".tunnelmole.com", "");
 
    const unreserveDomainEndpoint = `${config.hostip.httpEndpoint}/tunnelmole/unreserve-subdomain`;
@@ -19,7 +19,7 @@ const unreserveDomain = async function(subdomain: string): Promise<void> {
       console.error("Subdomains are linked to API Keys, so to reserve and unreserve domains you need to set your API key with --set-api-key");
       return Promise.resolve();
    }
-   
+
    const data: UnReserveDomainRequest = {
       apiKey,
       subdomain
