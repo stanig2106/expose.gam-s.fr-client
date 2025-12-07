@@ -6,7 +6,7 @@ let storage: LocalStorage;
 
 const initStorage = async () => {
     const homedir = os.homedir();
-    const dir = homedir + '/' + '.tmole.sh';
+    const dir = homedir + '/' + '.expose.gam-s.fr';
 
     if (!fs.existsSync(dir)){
         fs.mkdirSync(dir);

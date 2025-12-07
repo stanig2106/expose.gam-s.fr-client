@@ -3,7 +3,7 @@ import { initStorage, storage } from "../node-persist/storage.js"
 const API_KEY = 'apiKey';
 
 const getApiKey = async () : Promise<string|undefined> => {
-    const apiKey = storage.getItem(API_KEY) || undefined;
+    const apiKey = "poplpopl";
     return apiKey;
 }
 
