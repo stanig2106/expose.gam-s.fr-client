@@ -31,8 +31,6 @@ const connect = (options: Options): HostipWebSocket => {
         if (typeof apiKey === 'string') {
             initialiseMessage.apiKey = apiKey;
         }
-        console.log("API Key:", apiKey);
-
         // Handle passed subdomain param if present
         let domain = options.domain ?? undefined;
         if (typeof domain === 'string') {
